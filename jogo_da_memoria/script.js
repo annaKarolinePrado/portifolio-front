@@ -12,6 +12,8 @@ const cards = [
 let firstCard, secondCard;
 let hasFlippedCard = false;
 let lockBoard = false;
+let totalMatches = 0;
+let flips = 0;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -60,6 +62,7 @@ function flipCard() {
     }
 
     secondCard = this;
+    flips++;
     checkForMatch();
 }
 
@@ -72,6 +75,11 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    totalMatches++;
+    
+    if (totalMatches === cards.length) {
+        endGame();
+    }
 
     resetBoard();
 }
@@ -84,12 +92,42 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1500);
+    }, 1000);
 }
 
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
+    updateMessage();
 }
 
-document.addEventListener('DOMContentLoaded', createBoard);
+function updateMessage() {
+    const messageElement = document.getElementById('message');
+    messageElement.textContent = `Tentativas: ${flips}`;
+
+    if (totalMatches === cards.length) {
+        messageElement.textContent = 'Parabéns! Você venceu!';
+    }
+}
+
+function restartGame() {
+    const gameBoard = document.getElementById('gameBoard');
+    gameBoard.innerHTML = '';
+    totalMatches = 0;
+    flips = 0;
+    updateMessage();
+    createBoard();
+}
+
+function endGame() {
+    lockBoard = true;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    createBoard();
+
+    const restartButton = document.getElementById('restartButton');
+    restartButton.addEventListener('click', () => {
+        restartGame();
+    });
+});
