@@ -21,6 +21,27 @@ h1 {
     font-size: 3rem; 
 }
 
+#attemptsContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#attemptsMessage {
+    font-size: 1.2rem;
+    color: #EC53B0;
+}
+
+.hidden {
+    display: none;
+}
+
+#victoryMessage {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-top: 20px;
+}
+
 .game-container {
     display: flex;
     flex-direction: column; /* Ajuste para empilhar elementos verticalmente */
@@ -77,7 +98,7 @@ h1 {
 }
 
 .card-back {
-    background-color: #ffffff;
+    background-color: #fff;
     transform: rotateY(180deg);
 }
 

@@ -12,8 +12,8 @@ const cards = [
 let firstCard, secondCard;
 let hasFlippedCard = false;
 let lockBoard = false;
-let totalMatches = 0;
-let flips = 0;
+let attempts = 0;
+let matches = 0;
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -24,6 +24,7 @@ function shuffle(array) {
 
 function createBoard() {
     const gameBoard = document.getElementById('gameBoard');
+    gameBoard.innerHTML = ''; // Clear the game board
     const doubleCards = [...cards, ...cards];
     shuffle(doubleCards);
 
@@ -47,6 +48,8 @@ function createBoard() {
 
         gameBoard.appendChild(cardElement);
     });
+
+    updateAttemptsMessage();
 }
 
 function flipCard() {
@@ -62,7 +65,8 @@ function flipCard() {
     }
 
     secondCard = this;
-    flips++;
+    attempts++;
+    updateAttemptsMessage();
     checkForMatch();
 }
 
@@ -75,12 +79,9 @@ function checkForMatch() {
 function disableCards() {
     firstCard.removeEventListener('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
-    totalMatches++;
-    
-    if (totalMatches === cards.length) {
-        endGame();
-    }
 
+    matches++;
+    checkVictory();
     resetBoard();
 }
 
@@ -92,42 +93,32 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1000);
+    }, 1500);
 }
 
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
-    updateMessage();
 }
 
-function updateMessage() {
-    const messageElement = document.getElementById('message');
-    messageElement.textContent = `Tentativas: ${flips}`;
+function updateAttemptsMessage() {
+    const attemptsMessage = document.getElementById('attemptsMessage');
+    attemptsMessage.textContent = `Tentativas: ${attempts}`;
+}
 
-    if (totalMatches === cards.length) {
-        messageElement.textContent = 'Parabéns! Você venceu!';
+function checkVictory() {
+    if (matches === cards.length) {
+        const victoryMessage = document.getElementById('victoryMessage');
+        victoryMessage.classList.remove('hidden');
     }
 }
 
 function restartGame() {
-    const gameBoard = document.getElementById('gameBoard');
-    gameBoard.innerHTML = '';
-    totalMatches = 0;
-    flips = 0;
-    updateMessage();
+    attempts = 0;
+    matches = 0;
     createBoard();
+    const victoryMessage = document.getElementById('victoryMessage');
+    victoryMessage.classList.add('hidden');
 }
 
-function endGame() {
-    lockBoard = true;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    createBoard();
-
-    const restartButton = document.getElementById('restartButton');
-    restartButton.addEventListener('click', () => {
-        restartGame();
-    });
-});
+document.addEventListener('DOMContentLoaded', createBoard);
