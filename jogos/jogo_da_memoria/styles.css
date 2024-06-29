@@ -8,17 +8,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #0E21A0;
     font-family: Arial, sans-serif;
+    padding: 20px;
 }
 
 h1 {
-    text-align: center; /* Centraliza o texto horizontalmente */
-    margin-top: 20px; /* Espaço acima do título */
-    margin-bottom: 20px;
+    text-align: center;
+    margin: 20px 0;
     color: #EC53B0;
-    font-size: 3rem; 
+    font-size: 2rem; 
 }
 
 #attemptsContainer {
@@ -44,28 +44,32 @@ h1 {
 
 .game-container {
     display: flex;
-    flex-direction: column; /* Ajuste para empilhar elementos verticalmente */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 800px;
     padding: 20px;
+    background-color: #0E21A0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .game-board {
     display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 1fr)); /* Grade 4x4 responsiva */
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 10px;
     background-color: #4D2DB7;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .card {
     position: relative;
     width: 100%;
-    padding-top: 100%; /* 1:1 Aspect Ratio */
+    padding-top: 100%;
     background-color: #9D44C0;
     border-radius: 10px;
     cursor: pointer;
@@ -87,7 +91,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #ffffff;
     backface-visibility: hidden;
     border-radius: 10px;
@@ -102,25 +106,51 @@ h1 {
     transform: rotateY(180deg);
 }
 
-@media (max-width: 600px) {
-    .game-board {
-        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* 2 colunas em telas menores */
-    }
-}
-
 #restartButton {
-    margin-top: 20px; /* Espaço acima do botão */
-    padding: 20px 30px; /* Espaçamento interno do botão */
-    font-size: 1.5rem; /* Tamanho da fonte */
-    background-color: #4D2DB7; /* Cor de fundo */
-    color: #EC53B0; /* Cor do texto */
-    border: none; /* Remove a borda */
-    border-radius: 5px; /* Raio da borda arredondada */
-    cursor: pointer; /* Cursor ao passar por cima */
-    transition: background-color 0.3s, color 0.3s; /* Transição suave de cores */
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4D2DB7;
+    color: #EC53B0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #restartButton:hover {
-    background-color: #4D2DB7; /* Cor de fundo ao passar por cima */
-    color: #EC53B0; /* Cor do texto ao passar por cima */
+    background-color: #EC53B0;
+    color: #4D2DB7;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+
+    .card {
+        padding-top: 80%; /* Menor aspecto para caber na tela */
+    }
+
+    #attemptsMessage {
+        font-size: 1rem;
+    }
+
+    #victoryMessage {
+        font-size: 1.2rem;
+    }
+
+    #restartButton {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
 }
