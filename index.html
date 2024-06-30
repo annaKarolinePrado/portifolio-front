@@ -9,65 +9,74 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
+            <div class="menu-icon" onclick="toggleMenu(true)">&#9776;</div>
+            <ul class="menu">
+                <li><a onclick="toggleMenu(true)" href="#home">Home</a></li>
+                <li><a onclick="toggleMenu(true)" href="#projects">Projetos</a></li>
+                <li><a onclick="toggleMenu(true)" href="#contact">Contato</a></li>
+                <li><a onclick="toggleMenu(true)" href="#about">Sobre Mim</a></li>
             </ul>
         </nav>
+        <div class="greeting">Saudações, meros mortais!</div>
     </header>
-    <main>
+    
+    <main onclick="toggleMenu(false)">
         <section id="home">
-            <h1>Bem-vindo ao Meu Portfólio</h1>
+            <h1>Bem-vindos ao Meu Portfólio</h1>
+            <p class="welcome-message">Sou Anna, uma programadora apaixonada, artista dedicada,
+                                      <br>em constante busca por crescimento e inovação!</p>
         </section>
         <section id="projects">
-            <h2>Meus Projetos</h2>
             <div class="project-grid">
                 <div class="project-card">
                     <a href="https://www.example.com/projeto1" target="_blank">
-                        <h3>Projetos</h3>
-                        <p>Descrição do Projeto 1.</p>
+                        <h3>Projetos de Programação</h3>
+                        <p>Explore meus projetos em Java, <br>JavaScript e mais!</p>
                     </a>
                 </div>
                 <div class="project-card">
-                    <a href="https://www.example.com/projeto2" target="_blank">
+                    <a href="jogos/index.html" target="_blank">
                         <h3>Jogos</h3>
-                        <p>Descrição do Projeto 2.</p>
+                        <p>Explore meus jogos clássicos, <br>dinâmicos e desafiadores.</p>
                     </a>
                 </div>
                 <div class="project-card">
                     <a href="https://www.example.com/projeto3" target="_blank">
-                        <h3>Soft Skills</h3>
-                        <p>Descrição do Projeto 3.</p>
+                        <h3>Minhas Soft Skills</h3>
+                        <p>Descubra minhas habilidades essenciais <br>para o meu sucesso profissional.</p>
                     </a>
                 </div>
                 <div class="project-card">
                     <a href="https://www.example.com/projeto4" target="_blank">
-                        <h3>Carreira</h3>
-                        <p>Descrição do Projeto 4.</p>
+                        <h3>Trajetória de Carreira</h3>
+                        <p>Veja como evoluí na minha carreira e <br>alcancei meus objetivos.</p>
                     </a>
                 </div>
                 <div class="project-card">
                     <a href="https://www.example.com/projeto5" target="_blank">
-                        <h3>Projetos de artes</h3>
-                        <p>Descrição do Projeto 5.</p>
+                        <h3>Galeria de Arte</h3>
+                        <p>Explore minhas criações artísticas e inspiradoras.</p>
                     </a>
                 </div>
                 <div class="project-card">
                     <a href="https://www.example.com/projeto6" target="_blank">
-                        <h3>Redes</h3>
-                        <p>Descrição do Projeto 6.</p>
+                        <h3>Conexões Sociais</h3>
+                        <p>Conecte-se comigo nas principais <br>redes sociais.</p>
                     </a>
                 </div>
             </div>
         </section>
-        <section id="contact">
-            <h2>Contato</h2>
-            <p>Entre em contato comigo através do <a href="mailto:seuemail@example.com">email</a>.</p>
+        <section id="about" class="">
+            <h2>"Ao infinito e além!"</h2>
+            <p>'Que a força esteja com você!'.</p>
         </section>
+
     </main>
+
     <footer>
         <p>&copy; 2024 Anna Prado</p>
     </footer>
+    
+    <script src="scripts.js"></script>
 </body>
 </html>
