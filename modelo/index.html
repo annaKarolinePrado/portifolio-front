@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu(true)">&#9776;</div>
+            <ul class="menu">
+                <li><a onclick="toggleMenu(true)" href="#home">Home</a></li>
+                <li><a onclick="toggleMenu(true)" href="#projects">Projetos</a></li>
+                <li><a onclick="toggleMenu(true)" href="#contact">Contato</a></li>
+                <li><a onclick="toggleMenu(true)" href="#about">Sobre Mim</a></li>
+            </ul>
+        </nav>
+        <div class="greeting">Saudações, meros mortais!</div>
+    </header>
+    <main>
+    <div class="container">
+        <h1>Jogo da Velha</h1>
+        
+        <div class="board" id="board">
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+            <div class="cell" data-cell></div>
+        </div>
+        <div id="btn-reiniciar">        
+            <button id="restartButton">Reiniciar</button>
+        </div>
+        
+        <p class="message" id="winningMessage"></p>
+    </div>
+
+    <section id="about" class="">
+        <h2>"Ao infinito e além!"</h2>
+        <p>'Que a força esteja com você!.'</p>
+        <p>'A melhor liberdade que temos é escolher como reagir à coisas.'</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Anna Prado</p>
+    </footer>
+</main>
+  
+    <script src="../../scripts.js"></script>
+</body>
+</html>
