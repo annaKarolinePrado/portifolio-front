@@ -1,0 +1,262 @@
+:root {
+    --background-color: #262626;
+    --text-color: #f2e6ff;
+    --header-footer-color: #1a1a1a;
+    --menu-color: #1a1a1a;
+    --card-background: #333;
+    --card-hover-background: #444;
+    --text-main-color: #ffcce6;
+    --fonte-padrao: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --text-color-o: #ccccff;
+    --button-background: #9900ff;
+    --button-hover-background: #cc00ff;
+}
+
+.emoji {
+    font-size:2em;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit; /* Inherit the color from the parent element */
+    text-decoration: none; /* Remove the underline */
+    cursor: default; /* Change the cursor to default */
+}
+
+/* Estilização para inputs preenchidos automaticamente */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--text-main-color) !important;
+    background-color: var(--card-background) !important;
+    box-shadow: 0 0 15px #9900ff, 0 0 20px #9900ff !important;
+}
+
+body {
+    font-family: var(--fonte-padrao);
+    line-height: 1.6;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--header-footer-color);
+    color: var(--text-color);
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.menu-icon:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--menu-color);
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100%;
+    transition: left 0.3s;
+    margin-top: 90px;
+}
+
+.menu.active {
+    left: 0;
+}
+
+.menu li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 15px;
+    display: block;
+    margin-top: 50px;
+}
+
+main {
+    color: var(--text-main-color);
+    font-family: var(--fonte-padrao);
+}
+
+.jogadores {
+    margin-top: 20%;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.jogadores p {
+    margin-bottom: 5%;
+    text-shadow: 0 0 5px #9900ff, 0 0 10px #9900ff, 0 0 20px #9900ff;
+}
+
+.jogadores label, .jogadores div {
+    width: 100%;
+    float: left;
+}
+
+.jogadoresNome {
+    margin-bottom: 5%;
+}
+
+.player-X {
+    text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080;
+    margin-bottom: 3%;
+    color: var(--text-main-color);
+}
+
+.player-O {
+    text-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff, 0 0 20px #0000ff;
+    margin-bottom: 3%;
+    color: var(--text-color-o);
+}
+
+.player-input-X, .player-input-O {
+    background-color: var(--card-background); /* Cor de fundo dos inputs */
+    color: var(--text-main-color); /* Cor do texto dos inputs */
+    border-radius: 10px; /* Borda arredondada */
+    border: none; /* Sem borda */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    width: 60%; /* Largura fixa */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    outline: none; /* Sem contorno ao focar */
+    box-shadow: 0 0 15px #9900ff, 0 0 20px #9900ff;
+    text-align: center;
+}
+
+.botaoIniciar {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: var(--button-background);
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px; /* Pontas levemente curvadas */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botaoIniciar:hover {
+    background-color: var(--button-hover-background);
+    transform: scale(1.10);
+    box-shadow: 0 0 15px #9900ff, 0 0 20px #9900ff;
+}
+
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; /* Fixo na tela */
+    z-index: 1001; /* Sobrepõe outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura completa */
+    height: 100%; /* Altura completa */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.modal-content {
+    background-color: var(--card-background); /* Cor de fundo do modal */
+    color: var(--text-main-color); /* Cor do texto */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px #9900ff, 0 0 20px #9900ff;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background-color: var(--button-background);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: var(--button-hover-background);
+}
+
+body.modal-open main {
+    filter: blur(5px); /* Desfoca o conteúdo principal */
+}
+
+.greeting {
+    text-align: center;
+    width: 90%;
+    margin-right: 6%;
+    font-size: 1.6rem;
+}
+
+footer {
+    text-align: center;
+    background-color: var(--header-footer-color);
+    color: var(--text-color);
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+@media (max-width: 414px) {
+
+    .jogadores {
+        margin-top: 40%;
+        width: 100%;
+        float: left;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .jogadores p {
+        margin-top: 10%;
+        margin-bottom: 15%;
+    }
+
+    .jogadoresNome {
+        margin-bottom: 10%;
+    }
+    .player-input-O, .player-input-X {
+        width: 75%;
+    }
+}
