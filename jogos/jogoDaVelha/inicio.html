@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -17,26 +18,29 @@
                 <li><a onclick="toggleMenu(true)" href="#about">Sobre Mim</a></li>
             </ul>
         </nav>
-        <div class="greeting">Saudações, meros mortais!</div>
+        <div class="greeting"></div>
     </header>
     
     <main onclick="toggleMenu(false)">
         
         <section id="orientacao">
             <h2><strong>Orientações para iniciar</strong></h2>
-            <p>Pronto para o desafio? Escolha seu modo de jogo favorito e vamos nessa! 🎮</p>
-            <p><strong>Jogo Solo</strong> – Enfrente uma IA esperta e mostre quem manda! 💪</p>
-            <p><strong>Dois Jogadores</strong> – Convide um amigo e veja quem é o mestre do Jogo da Velha! 👥</p>
+            <p>Pronto para o desafio? Escolha seu modo de jogo favorito e vamos nessa!<span class="emoji">🎮</span></p>
+            <p><strong>Jogo Solo</strong> – Enfrente uma IA esperta e mostre quem manda! <span class="emoji">💪</span></p>
+            <p><strong>Dois Jogadores</strong> – Convide um amigo e veja quem é o mestre do Jogo da Velha! <span class="emoji">👥</span></p>
             <p>Escolha uma opção e comece a diversão!</p>
         </section>
 
         <section id="game-options">
             <div class="cardSolo" href="solo/">
-                <h3>Jogo Solo (contra IA)</h3>
+                <h3 class="neon-text">
+                    <i class="fas fa-user"></i><span class="icon-x">X</span><i class="fas fa-desktop"></i>
+                </h3>
             </div>
             <div class="cardIa">
-                
-                <a href="doisJogadores/jogoDaVelha.html"><h3>Dois Jogadores</h3></a>
+                <h3 class="neon-text">
+                    <i class="fas fa-user"></i><span class="icon-x">X</span><i class="fas fa-user"></i>
+                </h3>
             </div>
         </section>
     </main>

@@ -5,9 +5,14 @@
     --menu-color: #1a1a1a;
     --card-background: #333;
     --card-hover-background: #444;
-    --text-main-color: #bf00ff;
+    --text-main-color: #ffcce6;
     --fonte-padrao: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.emoji {
+    font-size:2em
+}
+
 
 * {
     box-sizing: border-box;
@@ -20,8 +25,6 @@ a {
     text-decoration: none; /* Remove the underline */
     cursor: default; /* Change the cursor to default */
 }
-
-
 
 body {
     font-family: var(--fonte-padrao);
@@ -107,30 +110,49 @@ main {
     text-align: center;
     color: var(--text-main-color);
     padding: 5%;
-    font-size: 20px; 
-    margin-top: 12%;
+    font-size: 23px; 
+    margin-top: 8%;
+}
+
+#orientacao i, #game-options i, .icon-x {
+    color: var(--text-main-color);
+    margin-right: 20px;
+    text-align: center;
 }
 
 .cardSolo, .cardIa {
     width: 100%;
     float: left;
     margin-bottom: 10%;
+    margin-top: 12%;
+}
+
+.neon-text {
+    color: #ffcce6; /* Cor principal do texto */
+    text-shadow: 
+        0 0 20px #ffcce6, /* Sombra mais distante */
+        0 0 40px #ffcce6, /* Sombra distante */
+        0 0 45px #ffcce6;  /* Sombra mais distante com cor azul */
 }
 
 .cardSolo h3, .cardIa h3 {
     background-color: #ff0080;
-    color: #ffff00;
+    color: #ffcce6;
     padding: 4%;
     width: 60%;
     float: left;
     margin-left: 20%;
     border-radius: 10px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080;
+    text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080;
 }
 
 .cardSolo h3:hover, .cardIa h3:hover {
     transform: scale(1.10);
+    box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080;
+    text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080;
 }
 
 footer {
@@ -144,12 +166,13 @@ footer {
 }
 
 
-@media (max-width: 412px) {
+@media (max-width: 414px) {
     #orientacao, #game-options {
         width: 80%; 
         margin-left: 10%;
         margin-top: 15%; 
         float: left;
+        font-size: 20px;
     }
 
     .cardSolo, .cardIa, #game-options {
@@ -162,5 +185,17 @@ footer {
         width: 80%; 
         margin-left: 10%; 
         margin-bottom: 5%; 
+        box-shadow: 0 0 15px #ff0080;
+        text-shadow: 0 0 5px #ff0080;
+    }
+
+    .emoji {
+        font-size:1.5em
+    }
+
+    .neon-text {
+        color: #ffcce6; /* Cor principal do texto */
+        text-shadow: 
+            0 0 20px #ffcce6, /* Sombra mais distante */
     }
 }

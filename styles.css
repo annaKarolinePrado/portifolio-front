@@ -128,12 +128,15 @@ h1, h2 {
     padding: 20px;
     text-align: center;
     transition: transform 0.3s;
+    
 }
 
 .project-card:hover {
     transform: scale(1.05);
     background: var(--project-card-hover-color);
     border-color: var(--project-card-hover-color);
+    box-shadow: 0 0 15px #5a00b3;
+    text-shadow: 0 0 5px #5a00b3;
 }
 
 .project-card a {
