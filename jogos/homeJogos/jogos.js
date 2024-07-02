@@ -1,4 +1,3 @@
-
 function toggleMenu(isAdicionar) {
     const menu = document.querySelector('.menu');
     if (menu.classList.contains('active')) {

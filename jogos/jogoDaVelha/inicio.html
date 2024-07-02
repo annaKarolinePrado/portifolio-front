@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu(true)">&#9776;</div>
+            <ul class="menu">
+                <li><a onclick="toggleMenu(true)" href="../../index.html">Home</a></li>
+                <li><a onclick="toggleMenu(true)" href="#projects">Projetos</a></li>
+                <li><a onclick="toggleMenu(true)" href="#contact">Contato</a></li>
+                <li><a onclick="toggleMenu(true)" href="#about">Sobre Mim</a></li>
+            </ul>
+        </nav>
+        <div class="greeting">Saudações, meros mortais!</div>
+    </header>
+    
+    <main onclick="toggleMenu(false)">
+        
+        <section id="orientacao">
+            <h2><strong>Orientações para iniciar</strong></h2>
+            <p>Pronto para o desafio? Escolha seu modo de jogo favorito e vamos nessa! 🎮</p>
+            <p><strong>Jogo Solo</strong> – Enfrente uma IA esperta e mostre quem manda! 💪</p>
+            <p><strong>Dois Jogadores</strong> – Convide um amigo e veja quem é o mestre do Jogo da Velha! 👥</p>
+            <p>Escolha uma opção e comece a diversão!</p>
+        </section>
+
+        <section id="game-options">
+            <div class="cardSolo" href="solo/">
+                <h3>Jogo Solo (contra IA)</h3>
+            </div>
+            <div class="cardIa">
+                
+                <a href="doisJogadores/jogoDaVelha.html"><h3>Dois Jogadores</h3></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Anna Prado</p>
+    </footer>
+    
+    <script src="inicio.js"></script>
+</body>
+</html>
