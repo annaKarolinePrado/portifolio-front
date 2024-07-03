@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="tabuleiro.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="menu-icon" onclick="toggleMenu(true)">&#9776;</div>
             <ul class="menu">
-                <li><a onclick="toggleMenu(true)" href="../../../index.html">Home</a></li>
+                <li><a onclick="toggleMenu(true)" href="../../../../index.html">Home</a></li>
                 <li><a onclick="toggleMenu(true)" href="#projects">Projetos</a></li>
                 <li><a onclick="toggleMenu(true)" href="#contact">Contato</a></li>
                 <li><a onclick="toggleMenu(true)" href="#about">Sobre Mim</a></li>
@@ -21,13 +20,45 @@
         <div class="greeting"></div>
     </header>
     
-    <main onclick="toggleMenu(false)">
+    <main>
+        <div id="game">
+            <div class="proximoJogador">
+                <p class="vezX">X<span id="vezX"></span></p>
+                
+                <p class="vezO">O<span id="vezO"></span></p>
+            </div>
+            <div class="turn">Vez de: <span id="currentPlayer">X</span></div>
+            <div class="turnVez">Vez de: <span id="currentJogador"></span></div>
+            <div id="result" class="resultado"></div>
+            <div id="board" class="board">
+                <div class="linha">
+                    <div class="cell" onclick="makeMove(0)"></div>
+                    <div class="cell" onclick="makeMove(1)"></div>
+                    <div class="cell" onclick="makeMove(2)"></div>
+                </div>
+                <div class="linha">
+                    <div class="cell" onclick="makeMove(3)"></div>
+                    <div class="cell" onclick="makeMove(4)"></div>
+                    <div class="cell" onclick="makeMove(5)"></div>                    
+                </div>
+                <div class="linha">
+                    <div class="cell" onclick="makeMove(6)"></div>
+                    <div class="cell" onclick="makeMove(7)"></div>
+                    <div class="cell" onclick="makeMove(8)"></div>
+                </div>                
+            </div>
+            <div class="line" id="line"></div> <!-- Linha para animação -->
+            <div class="buttons">
+                <button onclick="stopGame()">Voltar</button>
+                <button onclick="resetGame()">Reiniciar</button>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Anna Prado</p>
     </footer>
     
-    <script src="doisJogadores.js"></script>
+    <script src="tabuleiro.js"></script>
 </body>
 </html>

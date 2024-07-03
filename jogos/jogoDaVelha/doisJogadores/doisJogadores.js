@@ -43,3 +43,11 @@ function showModal(message, inputToFocus) {
         inputToFocus.focus();
     };
 }
+
+function salvarJogadores(){
+    var jogadorX = document.getElementById("playerInputX").value
+    var jogadorO = document.getElementById("playerInputO").value
+    
+    localStorage.setItem("playerInputX", jogadorX)
+    localStorage.setItem("playerInputO", jogadorO)
+}

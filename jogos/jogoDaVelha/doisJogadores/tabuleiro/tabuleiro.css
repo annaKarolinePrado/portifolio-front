@@ -106,6 +106,121 @@ header {
 main {
     color: var(--text-main-color);
     font-family: var(--fonte-padrao);
+    margin-top: 15%;
+    text-align: center;
+    width: 100%;
+}
+.board {
+    gap: 5px;
+    margin-top: 40px;
+    margin-bottom: 5%;
+    text-align: center;
+    float: left;
+    width: 100%;
+}
+.linha {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%;
+}
+.linha div {
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin: 5px;
+}
+.cell {
+    background-color: #6600cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+    border-radius: 10px;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 10px;
+    transition: background-color 0.3s;
+}
+
+.cell:not(.X):not(.O):hover {
+    background-color: #7a26cc; 
+}
+
+.cell.X {
+    text-shadow: 0 0 10px #ff3399, 0 0 20px #ff3399, 0 0 30px #ff3399, 0 0 40px #ff3399, 0 0 50px #ff3399, 0 0 60px #ff3399, 0 0 70px #ff3399;
+    color: #ffcce6;
+}
+
+.cell.O {
+    text-shadow: 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff, 0 0 40px #0000ff, 0 0 50px #0000ff, 0 0 60px #0000ff, 0 0 70px #0000ff;
+    color: #ccccff;
+}
+
+.buttons {
+    margin-top: 20px;
+    width: 100%;
+    float: left;
+}
+
+.buttons button {
+    margin-right: 10px;
+    padding: 10px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #0000ff;
+    color: #ccccff;
+    border: none;
+    border-radius: 5px;
+    width: 15%;
+    text-align: center;
+    box-shadow: 0 0 5px #0000cc, 0 0 10px #0000cc;
+}
+
+.buttons button:hover {
+    background-color: #3333ff;
+    transform: scale(1.10);
+}
+
+.turn, .turnVez {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: var(--text-color);
+    text-shadow: 0 0 10px #6600cc, 0 0 20px #6600cc, 0 0 30px #6600cc;
+}
+
+.turn {
+    display: none;
+}
+
+.proximoJogador {
+    width: 100%;
+    font-size: 3em;
+    color: var(--text-color);
+    text-shadow: 0 0 10px #6600cc, 0 0 20px #6600cc, 0 0 30px #6600cc;
+}
+
+.vezX, .vezO {
+    float: left;
+    text-align: center;
+    width: 50%;
+}
+
+#vezX, #vezO {
+    font-size: 0.5em;
+    width: 100%;
+    float: left;
+    margin-top: -2%;
+}
+
+.resultado {
+    margin-bottom: 10px;
+    font-size: 1.8em;
+    color: var(--text-color);
+    text-shadow: 0 0 10px #6600cc, 0 0 20px #6600cc, 0 0 30px #6600cc;
 }
 
 .greeting {
@@ -125,25 +240,47 @@ footer {
     bottom: 0;
 }
 
-@media (max-width: 414px) {
+/* Estilos para a linha animada */
+.line {
+    position: absolute;
+    height: 5px;
+    background-color: var(--text-color);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease-in-out;
+    z-index: 10;
+    text-shadow: 0 0 10px #5900b3, 0 0 40px #5900b3, 0 0 60px #5900b3;
+}
 
-    .jogadores {
-        margin-top: 40%;
-        width: 100%;
-        float: left;
-        text-align: center;
-        font-size: 1.5rem;
+@media (max-width: 414px) {
+    main {
+        margin-top: 25%;
     }
 
-    .jogadores p {
-        margin-top: 10%;
+    .board {
+        margin-top: -10%;
         margin-bottom: 15%;
     }
 
-    .jogadoresNome {
-        margin-bottom: 10%;
+    .buttons button {
+        width: 30%;
     }
-    .player-input-O, .player-input-X {
-        width: 75%;
+
+    #vezX, #vezO {
+        margin-top: -6%;
+    }
+
+    .linha div {
+        width: 70px;
+        height: 70px;
+    }
+
+    .vezX, .vezO {
+        font-size: 0.7em;
+    }    
+
+    .turnVez {
+        padding: 100px;
+        font-size: 1.5em;
     }
 }
