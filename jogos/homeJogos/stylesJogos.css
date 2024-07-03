@@ -35,7 +35,7 @@ header {
     align-items: center;
     background: var(--header-footer-color);
     color: var(--text-color);
-    padding: 20px;
+    padding: 11px;
     width: 100%;
     position: fixed;
     top: 0;
@@ -67,7 +67,7 @@ header {
     width: 200px;
     height: 100%;
     transition: left 0.3s;
-    margin-top: 90px;
+    margin-top: 72px;
 }
 
 .menu.active {
