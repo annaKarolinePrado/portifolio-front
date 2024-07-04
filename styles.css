@@ -38,6 +38,7 @@ header {
     top: 0;
     z-index: 1000;
     text-align: center;
+    font-family: var(--fonte-padrao); 
 }
 
 .menu-icon {
@@ -48,6 +49,7 @@ header {
 .menu-icon:hover {
     background-color: #555;
     transform: scale(1.1);
+    text-shadow: 0 0 5px #f2e6ff, 0 0 10px #f2e6ff;
 }
 
 .menu {
@@ -63,6 +65,7 @@ header {
     height: 100%;
     transition: left 0.3s;
     margin-top: 72px;
+    font-family: var(--fonte-padrao); 
 }
 
 .menu.active {
@@ -72,10 +75,16 @@ header {
 .menu li a {
     color: var(--text-color);
     text-decoration: none;
+    font-family: var(--fonte-padrao); 
     font-size: 1.2rem;
     padding: 15px;
     display: block;
     margin-top: 50px;
+}
+
+.menu li a:hover {
+    text-shadow: 0 0 5px #f2e6ff, 0 0 10px #f2e6ff;
+    transform: scale(1.2);
 }
 
 .greeting {
@@ -86,8 +95,8 @@ header {
 }
 
 main {
-    width: 95%;
-    margin-top: 100px;
+    width: 100%;
+    margin-top: 5%;
     margin-bottom: 10px;
     padding: 20px;
     background: var(--background-color);
@@ -98,6 +107,7 @@ main {
     align-items: center;
     overflow-y: auto;
     color: var(--text-color);
+    font-family: var(--fonte-padrao); 
 }
 
 h1, h2 {
@@ -108,9 +118,10 @@ h1, h2 {
 .welcome-message {
     text-align: center;
     font-size: 1.5rem;
-    margin-top: 10px;
+    margin-top: 7%;
     padding: 26px;
     color: var(--text-color);
+    font-family: var(--fonte-padrao); 
 }
 
 .project-grid {
@@ -121,22 +132,38 @@ h1, h2 {
     margin-top: 60px;
 }
 
-.project-card {
+.project-card, .cardDepoimento {
     background: var(--project-card-color);
     border: 1px solid var(--project-card-color);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     transition: transform 0.3s;
-    
+    font-family: var(--fonte-padrao); 
 }
 
-.project-card:hover {
+.project-card:hover, .cardDepoimento:hover {
     transform: scale(1.05);
     background: var(--project-card-hover-color);
     border-color: var(--project-card-hover-color);
     box-shadow: 0 0 15px #5a00b3;
     text-shadow: 0 0 5px #5a00b3;
+}
+
+.cardDepoimento {
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: var(--project-card-color);
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    width: 50%;
+    margin-top: 5%;
+
+}
+
+.cardDepoimento p {
+    font-size: 16px;
 }
 
 .project-card a {
@@ -148,19 +175,8 @@ h1, h2 {
     margin-bottom: 10px;
 }
 
-.project-card p {
+.project-card p, .cardDepoimento p {
     color: var(--text-color);
-}
-
-#about {
-    font-size: 13px;
-    color: var(--text-color);
-    background-color: var(--project-card-color);
-    padding: 5px;
-    text-align: center;
-    border-radius: 10px;
-    width: 50%;
-    margin-top: 9%;
 }
 
 footer {
@@ -178,8 +194,31 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .project-grid {
         grid-template-columns: 1fr;
+        margin-top: 1%;
+    }
+
+    .welcome-message {
+        font-size: 1.2rem;
+    }
+
+    main {
+        margin-top: 10%;
+    }
+
+    .cardDepoimento {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .greeting, .menu {
+        font-size: 1.3rem;
+    }
+
+    .menu {
+        left: -200px;
+        width: 150px;
     }
 }
