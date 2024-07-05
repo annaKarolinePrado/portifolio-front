@@ -51,22 +51,29 @@ function makeMove(index) {
 
         var jogadorVez = document.getElementById("currentJogador");
 
-        // Verificar se houve vencedor ou empate
+        // Verificar se houve vencedor
         if (checkWin()) {
-            jogadorVez =  currentPlayer != 'X' ? joogadorO : joogadorX;
-            document.getElementById('result').innerText = `Jogador ${jogadorVez} venceu!`;
+            jogadorVez = currentPlayer !== 'X' ? joogadorO : joogadorX;
+            document.getElementById('result').innerText = `${jogadorVez} Venceu!`;
             gameActive = false;
             showWinningLine();
-        } else if (board.includes('') === false) {
-            document.getElementById('result').innerText = 'Empate! Todos os quadrados estão preenchidos.';
-            gameActive = false;
+            confettiEffect();
+            showWinOverlay(jogadorVez);
         } else {
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-            jogadorVez.innerText =  currentPlayer != 'X' ? joogadorO : joogadorX;
-            document.getElementById('currentPlayer').innerText = currentPlayer;
+            // Verificar se não há mais movimentos possíveis
+            if (board.includes('') === false) {
+                document.getElementById('result').innerText = 'Empate! Não há mais movimentos possíveis.';
+                gameActive = false;
+            } else {
+                // Trocar de jogador
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                jogadorVez.innerText = currentPlayer !== 'X' ? joogadorO : joogadorX;
+                document.getElementById('currentPlayer').innerText = currentPlayer;
+            }
         }
     }
 }
+
 
 // Função para verificar se há um vencedor
 function checkWin() {
@@ -106,10 +113,29 @@ function showWinningLine() {
     }
 }
 
+// Função para estourar confetes
+function confettiEffect() {
+    confetti({
+        particleCount: 200,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+}
+
 // Função para parar o jogo
 function stopGame() {
     gameActive = false;
     document.getElementById('result').innerText = 'Jogo parado.';
+}
+
+function showWinOverlay(winner) {
+    const overlay = document.getElementById('winOverlay');
+    const winnerMessage = document.getElementById('winnerMessage');
+    winnerMessage.innerText = `${winner} Venceu!`;
+    overlay.classList.add('show');
+    confettiEffect();
+    confettiEffect();
+
 }
 
 // Função para reiniciar o jogo
@@ -123,5 +149,18 @@ function resetGame() {
         cell.innerText = '';
         cell.classList.remove('X', 'O');
     });
-    document.getElementById('line').style.transform = 'scaleX(0)';
+    const line = document.getElementById('line');
+    line.style.transition = 'none';
+    line.style.transform = 'scaleX(0)';
+
+    setTimeout(() => {
+        line.style.transition = 'transform 0.5s ease-in-out';
+    }, 50);
+
+    // Esconder a tela de vitória
+    const overlay = document.getElementById('winOverlay');
+    overlay.classList.remove('show');
 }
+
+
+

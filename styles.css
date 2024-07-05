@@ -47,7 +47,6 @@ header {
 }
 
 .menu-icon:hover {
-    background-color: #555;
     transform: scale(1.1);
     text-shadow: 0 0 5px #f2e6ff, 0 0 10px #f2e6ff;
 }
@@ -159,7 +158,7 @@ h1, h2 {
     border-radius: 10px;
     width: 50%;
     margin-top: 5%;
-
+    cursor: pointer;
 }
 
 .cardDepoimento p {

@@ -53,6 +53,14 @@
                 <button onclick="resetGame()">Reiniciar</button>
             </div>
         </div>
+        
+        <!-- Tela de Vitória -->
+        <div id="winOverlay" class="overlay">
+            <div class="message">
+                <h2 id="winnerMessage"></h2>
+                <button onclick="resetGame()">Recomeçar</button>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -60,5 +68,6 @@
     </footer>
     
     <script src="tabuleiro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>

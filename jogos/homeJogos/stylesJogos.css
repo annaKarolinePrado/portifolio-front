@@ -1,7 +1,7 @@
 :root {
     --primary-color: #000066; /* Azul escuro */
     --secondary-color: #0000b3; /* Azul mais claro */
-    --text-color: #ffffff; /* Branco para o texto */
+    --text-color: #e6e6ff; /* Branco para o texto */
     --background-color: #262626; /* Fundo cinza claro */
     --project-card-color: #0000b3; /* Azul para os cards */
     --project-card-hover-color: #0000ff; /* Azul mais claro ao passar o mouse */
@@ -14,7 +14,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
 }
 
 body {
@@ -43,11 +42,9 @@ header {
     text-align: center;
 }
 
-
 .menu-icon {
     font-size: 2rem;
     cursor: pointer;
-
 }
 
 .menu-icon:hover {
@@ -87,12 +84,12 @@ header {
     text-align: center;
     width: 90%;
     margin-right: 6%;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
 }
 
 main {
     width: 95%;
-    margin-top: 100px;
+    margin-top: 5%;
     margin-bottom: 10px; 
     padding: 20px;
     background: #fff;
@@ -108,16 +105,17 @@ main {
 
 h1, h2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .welcome-message {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 10px;
     text-align: center;
     padding: 26px;
     color: var(--text-color);
+    margin-top: 25%;
 }
 
 .project-grid {
@@ -172,4 +170,18 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        margin-top: 9%;
+    }
+    .greeting {
+        font-size: 1.2rem;
+    }
+    .welcome-message {
+        font-size: 1.2rem;
+        margin-top: 10%;
+    }
+    main {
+        margin-top: 10%;
+    }
 }
