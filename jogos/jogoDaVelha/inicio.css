@@ -111,7 +111,7 @@ main {
     color: var(--text-main-color);
     padding: 5%;
     font-size: 23px; 
-    margin-top: 8%;
+    margin-top: 5%;
 }
 
 #orientacao i, #game-options i, .icon-x {
@@ -120,7 +120,7 @@ main {
     text-align: center;
 }
 
-.cardSolo, .cardIa {
+.cardDoisJogadores, .cardIa {
     width: 100%;
     float: left;
     margin-bottom: 10%;
@@ -135,7 +135,7 @@ main {
         0 0 45px #ffcce6;  /* Sombra mais distante com cor azul */
 }
 
-.cardSolo h3, .cardIa h3 {
+.cardDoisJogadores h3, .cardIa h3 {
     background-color: #ff0080;
     color: #ffcce6;
     padding: 4%;
@@ -149,7 +149,7 @@ main {
     text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080;
 }
 
-.cardSolo h3:hover, .cardIa h3:hover {
+.cardDoisJogadores h3:hover, .cardIa h3:hover {
     transform: scale(1.10);
     box-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080;
     text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080;
@@ -166,22 +166,25 @@ footer {
 }
 
 
-@media (max-width: 414px) {
+@media (max-width: 715px) {
     #orientacao, #game-options {
-        width: 80%; 
-        margin-left: 10%;
+        width: 90%; 
+        margin-left: 5%;
         margin-top: 15%; 
+        font-size: 1.1em;
         float: left;
-        font-size: 20px;
     }
 
-    .cardSolo, .cardIa, #game-options {
+    .cardDoisJogadores, .cardIa, #game-options {
         width: 100%; 
         margin: 0 auto;
         text-align: center; 
     }
+    .cardDoisJogadores {
+        margin-bottom: 15%; 
+    }
 
-    .cardSolo h3, .cardIa h3 {
+    .cardDoisJogadores h3, .cardIa h3 {
         width: 80%; 
         margin-left: 10%; 
         margin-bottom: 5%; 
@@ -198,15 +201,12 @@ footer {
         text-shadow: 
             0 0 20px #ffcce6, /* Sombra mais distante */
     }
+    .project-card {
+        grid-template-columns: 1fr;
+    }
 }
 @media (max-width: 1024px) {
     .project-card {
         grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 500px) {
-    .project-card {
-        grid-template-columns: 1fr;
     }
 }
