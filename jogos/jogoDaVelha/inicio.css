@@ -104,7 +104,17 @@ main {
     flex: 1;
 }
 
-#orientacao, #game-options {
+#orientacao {
+    float: left;
+    width: 50%;
+    text-align: center;
+    color: var(--text-main-color);
+    padding: 5%;
+    font-size: 23px; 
+    margin-top: 12%;
+}
+
+#game-options {
     float: left;
     width: 50%;
     text-align: center;
@@ -125,6 +135,7 @@ main {
     float: left;
     margin-bottom: 10%;
     margin-top: 12%;
+    
 }
 
 .neon-text {
@@ -133,10 +144,12 @@ main {
         0 0 20px #ffcce6, /* Sombra mais distante */
         0 0 40px #ffcce6, /* Sombra distante */
         0 0 45px #ffcce6;  /* Sombra mais distante com cor azul */
+    text-align: center;
 }
 
 .cardDoisJogadores h3, .cardIa h3 {
     background-color: #ff0080;
+    text-align: center;
     color: #ffcce6;
     padding: 4%;
     width: 60%;

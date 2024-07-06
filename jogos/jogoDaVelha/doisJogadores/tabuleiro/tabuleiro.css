@@ -109,14 +109,16 @@ main {
     text-align: center;
     width: 100%;
 }
+
 .board {
     gap: 5px;
-    margin-top: 30px;
+    margin-top: 2%;
     margin-bottom: 5%;
     text-align: center;
     float: left;
     width: 100%;
 }
+
 .linha {
     display: flex;
     justify-content: center; 
@@ -184,6 +186,10 @@ main {
 .buttons button:hover {
     background-color: #ff1a8c;
     transform: scale(1.10);
+}
+
+.turnVez {
+    margin-top: 5%;
 }
 
 .turn, .turnVez {
@@ -319,7 +325,7 @@ footer {
     }
 
     .board {
-        margin-top: -10%;
+        margin-top: -20%;
     }
 
     .buttons button {

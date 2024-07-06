@@ -13,7 +13,7 @@
 }
 
 .emoji {
-    font-size:2em;
+    font-size: 2em;
 }
 
 * {
@@ -71,6 +71,7 @@ header {
 }
 
 .menu-icon:hover {
+    background-color: #555;
     transform: scale(1.1);
 }
 
@@ -107,52 +108,81 @@ main {
     font-family: var(--fonte-padrao);
 }
 
-.jogadores {
-    margin-top: 20%;
-    width: 100%;
-    float: left;
+.greeting {
     text-align: center;
-    font-size: 1.5rem;
+    width: 90%;
+    margin-right: 6%;
+    font-size: 1.6rem;
 }
 
-.jogadores p {
-    margin-bottom: 5%;
+
+
+
+.game-container {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.player-info, .difficulty {
+    margin-bottom: 15%;
     text-shadow: 0 0 5px #9900ff, 0 0 10px #9900ff, 0 0 20px #9900ff;
-}
-
-.jogadores label, .jogadores div {
+    font-size: 1.3rem;
+    text-align: center;
     width: 100%;
-    float: left;
 }
 
-.jogadoresNome {
-    margin-bottom: 5%;
+.player-info label, #player-name{
+    width: 100%;
 }
 
-.player-X {
-    text-shadow: 0 0 5px #ff0080, 0 0 10px #ff0080, 0 0 20px #ff0080;
-    margin-bottom: 3%;
+#player-name, #difficulty {
+    background-color: var(--card-background);
     color: var(--text-main-color);
-}
-
-.player-O {
-    text-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff, 0 0 20px #0000ff;
-    margin-bottom: 3%;
-    color: var(--text-color-o);
-}
-
-.player-input-X, .player-input-O {
-    background-color: var(--card-background); /* Cor de fundo dos inputs */
-    color: var(--text-main-color); /* Cor do texto dos inputs */
-    border-radius: 10px; /* Borda arredondada */
-    border: none; /* Sem borda */
-    padding: 10px; /* Espaçamento interno */
-    margin-bottom: 10px; /* Espaçamento inferior */
-    width: 60%; /* Largura fixa */
-    font-size: 1.2rem; /* Tamanho da fonte */
-    outline: none; /* Sem contorno ao focar */
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 60%;
+    font-size: 1.2rem;
+    outline: none;
     box-shadow: 0 0 15px #9900ff, 0 0 20px #9900ff;
     text-align: center;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+}
+
+.cell {
+    background-color: var(--card-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: var(--card-hover-background);
+}
+
+.game-message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+button {
+    background-color: var(--button-background);
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .botaoIniciar {
@@ -163,68 +193,22 @@ main {
     color: #fff;
     font-size: 1.2rem;
     border: none;
-    border-radius: 10px; /* Pontas levemente curvadas */
+    border-radius: 10px;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.botaoIniciar:hover {
+button:hover {
     background-color: var(--button-hover-background);
     transform: scale(1.10);
     box-shadow: 0 0 15px #9900ff, 0 0 20px #9900ff;
 }
 
-.modal {
-    display: none; /* Escondido por padrão */
-    position: fixed; /* Fixo na tela */
-    z-index: 1001; /* Sobrepõe outros elementos */
-    left: 0;
-    top: 0;
-    width: 100%; /* Largura completa */
-    height: 100%; /* Altura completa */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-}
-
-.modal-content {
-    background-color: var(--card-background); /* Cor de fundo do modal */
-    color: var(--text-main-color); /* Cor do texto */
-    padding: 20px;
-    border-radius: 10px;
+.start-screen {
     text-align: center;
-    box-shadow: 0 0 15px #9900ff, 0 0 20px #9900ff;
-}
-
-.modal-content p {
-    margin-bottom: 20px;
-}
-
-.modal-content button {
-    padding: 10px 20px;
-    background-color: var(--button-background);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.modal-content button:hover {
-    background-color: var(--button-hover-background);
-}
-
-body.modal-open main {
-    filter: blur(5px); /* Desfoca o conteúdo principal */
-}
-
-.greeting {
-    text-align: center;
-    width: 90%;
-    margin-right: 6%;
-    font-size: 1.6rem;
+    margin-top: 100px;
 }
 
 footer {
@@ -239,23 +223,9 @@ footer {
 
 @media (max-width: 414px) {
 
-    .jogadores {
-        margin-top: 20%;
-        width: 100%;
-        float: left;
-        text-align: center;
-        font-size: 1.5rem;
-    }
-
-    .jogadores p {
-        margin-top: 10%;
-        margin-bottom: 15%;
-    }
-
-    .jogadoresNome {
+    .player-info, .difficulty {
         margin-bottom: 10%;
-    }
-    .player-input-O, .player-input-X {
-        width: 75%;
+        text-shadow: 0 0 5px #9900ff, 0 0 10px #9900ff, 0 0 20px #9900ff;
+        font-size: 1.3rem;
     }
 }
