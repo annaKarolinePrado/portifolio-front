@@ -41,6 +41,7 @@ function handleCellClick(event) {
     if (board[cellIndex] !== '') return;
     board[cellIndex] = currentPlayer;
     event.target.innerText = currentPlayer;
+    event.target.setAttribute('data-player', currentPlayer); // Adiciona o atributo data-player
     if (checkWin(currentPlayer)) {
         document.getElementById('game-message').innerText = `${currentPlayer === 'X' ? playerName : 'IA'} venceu!`;
         endGame();
@@ -65,6 +66,7 @@ function iaMove() {
     board[move] = 'O';
     const cell = document.querySelector(`.cell[data-index='${move}']`);
     cell.innerText = 'O';
+    cell.setAttribute('data-player', 'O'); // Adiciona o atributo data-player
     cell.removeEventListener('click', handleCellClick);
     if (checkWin('O')) {
         document.getElementById('game-message').innerText = 'IA venceu!';
@@ -148,5 +150,6 @@ function endGame() {
 
 function resetGame() {
     initializeGameBoard();
-    document.getElementById('game-message').innerText = '';
+    document.getElementById('game-message').innerText = `Boa sorte, ${playerName}! Você é o X.`;
 }
+

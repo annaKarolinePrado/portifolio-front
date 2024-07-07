@@ -29,7 +29,7 @@
                 <input type="text" id="player-name">
             </div>
             <div class="difficulty">
-                <label for="difficulty">Dificuldade</label>
+                <label for="difficulty">Nível</label>
                 <select id="difficulty">
                     <option value="medium">Médio</option>
                     <option value="hard">Difícil</option>
@@ -37,6 +37,10 @@
             </div>
             <button class="botaoIniciar" onclick="startGame()">Iniciar Jogo</button>
         </div>
+        <div class="menssagem">
+            <div class="game-message" id="game-message"></div>
+        </div>
+        
 
         <div id="game-container" class="game-container" style="display:none;">
             <div class="game-board" id="game-board">
@@ -50,8 +54,10 @@
                 <div class="cell" data-index="7"></div>
                 <div class="cell" data-index="8"></div>
             </div>
-            <div class="game-message" id="game-message"></div>
-            <button onclick="resetGame()">Reiniciar Jogo</button>
+            <button class="reiniciar" onclick="resetGame()">Reiniciar</button>
+            <a href="../../homeJogos/jogos.html">
+                <button class="voltar">Voltar</button>
+            </a>
         </div>
     </main>
 

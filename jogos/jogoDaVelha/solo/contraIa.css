@@ -8,8 +8,9 @@
     --text-main-color: #ffcce6;
     --fonte-padrao: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     --text-color-o: #ccccff;
-    --button-background: #9900ff;
+    --button-background: #6600cc;
     --button-hover-background: #cc00ff;
+    --card-tabuleiro: #0000ff;
 }
 
 .emoji {
@@ -115,9 +116,6 @@ main {
     font-size: 1.6rem;
 }
 
-
-
-
 .game-container {
     margin-top: 100px;
     text-align: center;
@@ -131,8 +129,10 @@ main {
     width: 100%;
 }
 
-.player-info label, #player-name{
-    width: 100%;
+.player-info label, .difficulty label {
+    display: block;
+    margin-bottom: 6%;
+    text-align: center;
 }
 
 #player-name, #difficulty {
@@ -155,24 +155,49 @@ main {
     grid-template-rows: repeat(3, 100px);
     gap: 10px;
     justify-content: center;
+    transition: background-color 0.3s;
+    color: #5900b3;
+    text-shadow: 0 0 10px #5900b3,0 0 20px #5900b3,0 0 30px #5900b3, 0 0 40px #5900b3, 0 0 60px #5900b3;
+    margin-top: 5%;
 }
 
 .cell {
-    background-color: var(--card-background);
+    background-color: var(--card-tabuleiro);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    text-shadow: 0 0 10px #5900b3, 0 0 40px #5900b3, 0 0 60px #5900b3;
+    border-radius: 15px;
+}
+
+.cell[data-player='O'] {
+    color: #ffff99;
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00, 0 0 50px #ffcc00, 0 0 75px #ffcc00;
+}
+
+.cell[data-player='X'] {
+    color: #cc99ff;
+    text-shadow: 0 0 5px #ff0066, 0 0 10px #ff0066, 0 0 20px #ff0066, 0 0 30px #ff0066, 0 0 40px #ff0066, 0 0 50px #ff0066, 0 0 75px #ff0066;
 }
 
 .cell:hover {
-    background-color: var(--card-hover-background);
+    background-color: #3333ff;
+    
+}
+
+.game-board {
+    height: 10%;
 }
 
 .game-message {
-    margin-top: 20px;
-    font-size: 1.2rem;
+    margin-top: 40%;
+    margin-bottom: 20%;
+    font-size: 1.8rem;
+    text-align: center;
+    text-shadow: 0 0 10px #5900b3,0 0 20px #5900b3,0 0 30px #5900b3, 0 0 40px #5900b3;
 }
 
 button {
@@ -182,7 +207,23 @@ button {
     margin-top: 20px;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    width: 50%;
+}
+
+.reiniciar, .voltar {
+    background-color: var(--button-background);
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin-top: 15%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    width: 46%;
+    float: left;
+    margin-left: 3.5%;
 }
 
 .botaoIniciar {
@@ -201,15 +242,17 @@ button {
 }
 
 button:hover {
-    background-color: var(--button-hover-background);
+    background-color: #8000ff;
     transform: scale(1.10);
-    box-shadow: 0 0 15px #9900ff, 0 0 20px #9900ff;
+    box-shadow: 0 0 15px #8000ff, 0 0 20px #8000ff;
 }
 
 .start-screen {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 35%;
 }
+
+
 
 footer {
     text-align: center;
@@ -228,4 +271,26 @@ footer {
         text-shadow: 0 0 5px #9900ff, 0 0 10px #9900ff, 0 0 20px #9900ff;
         font-size: 1.3rem;
     }
+
+    button, .voltar, .reiniciar {
+        font-size: 1.1rem;
+    }
+
+    .game-message {
+        font-size: 1.5rem;
+    }
+
+    .game-board {
+        margin-top: -1%;
+    }
+
+    .menssagem {
+        height: 1%;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+    
 }
