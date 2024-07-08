@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="inicio.css">
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game Levels</title>
+        <link rel="stylesheet" href="inicio.css">
+    </head>
 <body>
     <header>
         <nav>
@@ -15,20 +15,44 @@
                 <li><a onclick="toggleMenu(true)" href="#projects">Projetos</a></li>
                 <li><a onclick="toggleMenu(true)" href="#contact">Contato</a></li>
                 <li><a onclick="toggleMenu(true)" href="#about">Sobre Mim</a></li>
+                <li><a onclick="toggleMenu(true)" href="../../jogos/homeJogos/jogos.html">Jogos</a></li>
             </ul>
         </nav>
-        <div class="greeting">Saudações, meros mortais!</div>
+        <div class="greeting"></div>
     </header>
-    
     <main onclick="toggleMenu(false)">
-       
-
+        <div class="container">
+            <div class="fase fase1"><a href="fase01/fase01.html">1</a></div>
+            <div class="fase fase2" onclick="startLevel(2)">2</div>
+            <div class="fase fase3" onclick="startLevel(3)">3</div>
+            <div class="fase fase4" onclick="startLevel(4)">4</div>
+            <div class="fase fase5" onclick="startLevel(5)">5</div>
+            <div class="fase fase6" onclick="startLevel(6)">6</div>
+            <div class="fase fase7" onclick="startLevel(7)">7</div>
+            <div class="fase fase8" onclick="startLevel(8)">8</div>
+            <div class="fase fase9" onclick="startLevel(9)">9</div>
+            <div class="fase fase10" onclick="startLevel(10)">10</div>
+            <div class="fase fase11" onclick="startLevel(11)">11</div>
+            <div class="fase fase12" onclick="startLevel(12)">12</div>
+            <div class="fase fase13" onclick="startLevel(13)">13</div>
+            <div class="fase fase14" onclick="startLevel(14)">14</div>
+            <div class="fase fase15" onclick="startLevel(15)">15</div>
+            <div class="fase fase16" onclick="startLevel(16)">16</div>
+            <div class="fase fase17" onclick="startLevel(17)">17</div>
+            <div class="fase fase18" onclick="startLevel(18)">18</div>
+            <div class="fase fase19" onclick="startLevel(19)">19</div>
+            <div class="fase fase20" onclick="startLevel(20)">20</div>
+            <div class="fase fase21" onclick="startLevel(21)">21</div>
+            <div class="fase fase22" onclick="startLevel(22)">22</div>
+            <div class="fase fase23" onclick="startLevel(23)">23</div>
+            <div class="fase fase24" onclick="startLevel(24)">24</div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2024 Anna Prado</p>
     </footer>
-    
+
     <script src="inicio.js"></script>
 </body>
 </html>

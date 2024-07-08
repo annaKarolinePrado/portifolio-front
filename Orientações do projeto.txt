@@ -1,0 +1,60 @@
+															Meu Cantinho
+												|||								pesquisa, sobre mim
+												
+												
+												| Projetos						| Soft Skills	
+												
+												| Jogos							| Redes							
+												
+												| Carreira						| Projetos de artes
+
+
+
+
+
+JOGO DA VELHA 
+	No codigo abaixo, crie um jogo da velha classico responsivo que aparecera após clicar em iniciar jogo
+	Nessa tela deve ter um texto informando o nome do jogador 
+	abaixo do texto o tabuleiro 
+	abaixo do tabuleiro deve ter um botão que da a opção de reiniciar
+	Ao final do jogo deve aparecer uma mensagem sobre a tela com o fundo levemente transparente mostrando o fundo
+	Na modal mostrar o vencedor 
+	E um icon para voltar para jogos e outro para jogar novamente
+	Botão jogar novamente deve questionar se seram os mesmos jogadores com a opção sim e não
+	Se for sim mantenha os nomes já informados e inicie um novo jogo
+	Se for não volte para informar os nomes e iniciar um novo jogo 
+ 
+ 
+JOGO DA MEMÓRIA
+	Inicio
+	Um caminho com as fases
+
+	1ª Fase (Nível Genin)
+		3x3
+	2ª Fase (Nível Genin)
+		4x4
+	3ª Fase (Nível Genin)
+		5x5
+	4ª Fase (Nível Chunin)
+		6x6
+	5ª Fase (Nível Chunin)
+		7x7
+	6ª Fase (Nível Chunin)
+		7x7
+	7ª Fase (Nível Jonin)
+		7x7
+	8ª Fase (Nível Jonin)
+		7x7
+	9ª Fase (Nível Jonin)
+		7x7
+	10ª Fase (Nível ANBU)
+		7x7
+	11ª Fase (Nível Sannin)
+		7x7
+	12ª Fase Final (Nível Kage)
+		8x8
+		
+		
+
+
+Crie uma sequencia de bolinhas parecido com candy crush saga que ao clicar na primeira bolinha o jogador irá comçar a primeira fase do jogo, ao clicar na bolinha dois, irá para fase dois, e assim por diante 
