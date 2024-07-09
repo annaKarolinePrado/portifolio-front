@@ -58,3 +58,12 @@ JOGO DA MEMÓRIA
 
 
 Crie uma sequencia de bolinhas parecido com candy crush saga que ao clicar na primeira bolinha o jogador irá comçar a primeira fase do jogo, ao clicar na bolinha dois, irá para fase dois, e assim por diante 
+
+
+
+Crie um jogo da memória em uma grade 3x3 
+Nesta tela deve conter um contador de jogadas
+Deve ser permitido 10 jogadas, ao chegar a decima e o jogo não tiver cido finalizado deve aparecer uma modal transparente na tela informando que não há mais tentativas e um botão para retornar a fases
+
+
+Este código cria um jogo da memória 2x2 básico com um contador de jogadas e um modal que aparece quando as jogadas se esgotam. O estilo é simples e pode ser personalizado conforme desejado. Certifique-se de adicionar lógica na função de callback do botão "Voltar a Fases" para redirecionar para a página de fases.

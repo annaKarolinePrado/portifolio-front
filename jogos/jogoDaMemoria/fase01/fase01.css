@@ -1,3 +1,4 @@
+
 :root {
     --background-color: #262626;
     --text-color: #f2e6ff;
@@ -23,9 +24,9 @@
 }
 
 a {
-    color: inherit; /* Inherit the color from the parent element */
-    text-decoration: none; /* Remove the underline */
-    cursor: default; /* Change the cursor to default */
+    color: inherit; 
+    text-decoration: none;
+    cursor: default; 
 }
 
 /* Estilização para inputs preenchidos automaticamente */
@@ -104,6 +105,7 @@ header {
 }
 
 main {
+    margin-top: 5.7%;
     color: var(--text-main-color);
     font-family: var(--fonte-padrao);
 }
@@ -114,6 +116,116 @@ main {
     margin-right: 6%;
     font-size: 1.6rem;
 }
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    color: #EC53B0;
+    font-size: 2rem; 
+}
+
+#attemptsContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#attemptsMessage {
+    font-size: 1.2rem;
+    color: #EC53B0;
+}
+
+.hidden {
+    display: none;
+}
+
+#victoryMessage {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-top: 20px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #0E21A0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #4D2DB7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    background-color: #9D44C0;
+    border-radius: 10px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card-front {
+    background-color: #9D44C0;
+}
+
+.card-back {
+    background-color: #fff;
+    transform: rotateY(180deg);
+}
+
+#restartButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #4D2DB7;
+    color: #EC53B0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#restartButton:hover {
+    background-color: #EC53B0;
+    color: #4D2DB7;
+}
+
 
 footer {
     text-align: center;
