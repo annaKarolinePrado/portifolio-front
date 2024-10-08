@@ -1,0 +1,115 @@
+:root {
+    --background-color: #262626;
+    --cor-input: #404040;
+    --cor-botao: #6600cc;
+    --text-color: #d9b3ff;
+    --text-color-botao: #f2e6ff;
+    --text-sombra:  0 0 15px #d9b3ff, 0 0 20px #d9b3ff;
+    --menu-color: #1a1a1a;
+    --fonte-padrao: "Work Sans", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    margin-top: 4.4%;
+    font-family: var(--fonte-padrao);
+    text-align: center;
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  
+  main {
+    width: 100%;
+    margin-top: 4.4%;
+    margin-bottom: 10%;
+  }
+
+.contact-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--background-color);
+  }
+  
+  .textoPrincial {
+      margin-bottom: 15%;
+  }
+  
+  .contact-card {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin: 25px 0;
+    perspective: 1000px;
+  }
+  
+  .contact-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  
+  .contact-card-inner:hover {
+    transform: rotateY(180deg);
+  }
+  
+  .contact-card-front,
+  .contact-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--menu-color);
+    color: var(--text-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .contact-card-front i {
+    font-size: 1.7em;
+    float: left;
+    margin-left: 15%;
+  }
+  
+  .contact-card-back {
+    background-color: var(--text-color);
+    color: var(--menu-color);
+    transform: rotateY(180deg);
+  }
+  
+  .contact-card-front a, .contact-card-back a {
+    color: var(--menu-color);
+    text-decoration: none;
+  }
+  
+  p {
+      margin-bottom: 0%;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-card-front i {
+      font-size: 1.3em;
+    }
+  
+    .contact-container {
+      max-width: 300px;
+    }
+  
+    .contact-card-back {
+      font-size: 0.9em;
+    }
+  }
+  

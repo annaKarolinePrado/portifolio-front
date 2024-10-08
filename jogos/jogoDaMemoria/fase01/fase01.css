@@ -41,7 +41,7 @@ input:-webkit-autofill:active {
 }
 
 body {
-    font-family: var(--fonte-padrao);
+    font-family: 'Apple Chancery', cursive;
     line-height: 1.6;
     height: 100vh;
     overflow-x: hidden;
@@ -56,6 +56,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Apple Chancery', cursive;
     background: var(--header-footer-color);
     color: var(--text-color);
     padding: 11px;
@@ -123,6 +124,7 @@ h1 {
     margin: 20px 0;
     color: #ff0066;
     font-size: 2rem; 
+    font-family: 'Apple Chancery', sans-serif;
 }
 
 #attemptsContainer {
@@ -133,6 +135,7 @@ h1 {
 #attemptsMessage {
     font-size: 1.2rem;
     color: #ff0066;
+    font-family: 'Apple Chancery', sans-serif;
 }
 
 .hidden {
@@ -144,6 +147,7 @@ h1 {
     font-size: 1.5rem;
     color: #FFD700;
     margin-top: 20px;
+    font-family: 'Apple Chancery', sans-serif;
 }
 
 .game-container {
@@ -163,11 +167,9 @@ h1 {
 .game-board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 10px;
+    gap: 5px;
+    padding: 5px;
     /*background-color: #4D2DB7;*/
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 
@@ -195,7 +197,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #ffffff;
     backface-visibility: hidden;
     border-radius: 10px;
@@ -203,11 +205,12 @@ h1 {
 
 .card-front {
     background-color: #6600cc;
-    box-shadow:  0 0 10px #6600cc;
+    box-shadow:  0 0 5px #6600cc;
 }
 
 .card-front:hover {
     transform: scale(1.1);
+    background-color: #7300e6;
 }
 
 .card-back {
@@ -218,18 +221,19 @@ h1 {
 #restartButton {
     margin-top: 20px;
     padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #0000ff;
-    color: #ff0066;
+    font-size: 1.5rem;
+    background-color: #ff3385;
+    color: #6600cc;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    font-family: 'Apple Chancery', sans-serif;
 }
 
 #restartButton:hover {
-    background-color: #ff0066;
-    color: #4D2DB7;
+    background-color: #ff3385;
+    color: #6600cc;
 }
 
 
